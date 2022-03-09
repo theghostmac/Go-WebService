@@ -1,1 +1,1 @@
-package Go_WebService
+package main

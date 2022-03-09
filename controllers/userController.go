@@ -1,9 +1,12 @@
 package controllers
 
-import "net/http"
+import (
+	"golang.org/x/crypto/openpgp/packet"
+	"net/http"
+)
 
 type userController struct {
-	// empty for now
+	packet.UserID	*regexp.Regexp
 }
 
 func (userCon userController) ServeHTTP(writer http.ResponseWriter, reader *http.Request) {
@@ -11,4 +14,8 @@ func (userCon userController) ServeHTTP(writer http.ResponseWriter, reader *http
 	if err != nil {
 		return
 	}
+}
+
+func newUserController()  {
+	
 }
