@@ -19,8 +19,11 @@ func ReturnUsers() []*User {
 }
 
 // create a function to add user and return user or error
-func AddUser(usr User) {
-
+func AddUser(usr User) (User, error) {
+	usr.ID = nextID
+	nextID++
+	users = append(users, &usr)
+	return usr, nil
 }
 
 //
